@@ -1,0 +1,12 @@
+name: venue_entity
+description: "Shared data models for venues"
+version: 1.0.0
+
+environment:
+  sdk: ^3.7.2
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
