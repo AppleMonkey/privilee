@@ -10,15 +10,14 @@ abstract class CategoryParser {
 @immutable
 @injectable
 class CategoryParserImplementation implements CategoryParser {
-  const CategoryParserImplementation();
-
   @override
   CategoryDto? parse(dynamic json) {
-
     final categoryMap = safeCast<Map<dynamic, dynamic>>(json);
 
     if (categoryMap == null) {
-      throw ArgumentError('Category must be a Map with String keys and String values');
+      throw ArgumentError(
+        'Category must be a Map with String keys and String values',
+      );
     }
 
     if (!categoryMap.containsKey('name')) {

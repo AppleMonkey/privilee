@@ -10,8 +10,6 @@ abstract class VenueImageParser {
 @immutable
 @injectable
 class VenueImageParserImplementation implements VenueImageParser {
-  const VenueImageParserImplementation();
-
   @override
   VenueImageDto? parse(dynamic json) {
     final image = safeCast<Map<dynamic, dynamic>>(json);
