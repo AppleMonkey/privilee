@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:venue_data/src/model/thing_to_do_dto.dart';
-import 'package:venue_data/src/parser/thing_to_do_dto_parser.dart';
+import 'package:venue_data/src/parser/thing_to_do_parser.dart';
 
 import '../parametarized_test_utility/model/test_case.dart';
 import '../parametarized_test_utility/test_case_runner/test_case_list_extension.dart';
