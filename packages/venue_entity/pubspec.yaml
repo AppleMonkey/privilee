@@ -9,4 +9,4 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  equatable: ^2.0.5
