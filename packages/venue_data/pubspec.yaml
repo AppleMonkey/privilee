@@ -18,6 +18,8 @@ dependencies:
   meta: ^1.16.0
   venue_entity:
     path: ../venue_entity
+  venue_domain:
+    path: ../venue_domain
 
 dev_dependencies:
   flutter_test:

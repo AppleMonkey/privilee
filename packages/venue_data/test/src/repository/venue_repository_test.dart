@@ -15,6 +15,7 @@ import 'package:venue_data/src/parser/thing_to_do_parser.dart';
 import 'package:venue_data/src/parser/venue_image_parser.dart';
 import 'package:venue_data/src/parser/venue_parser.dart';
 import 'package:venue_data/src/repository/venue_repository.dart';
+import 'package:venue_domain/venue_domain.dart' show VenueRepository;
 import 'package:venue_entity/venue_entity.dart';
 
 void main() {
