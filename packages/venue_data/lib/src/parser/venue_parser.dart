@@ -1,7 +1,15 @@
 import 'package:injectable/injectable.dart' show injectable;
 import 'package:meta/meta.dart' show immutable;
+import 'package:venue_data/src/model/category_dto.dart';
+import 'package:venue_data/src/model/thing_to_do_dto.dart';
+import 'package:venue_data/src/model/venue_dto.dart';
+import 'package:venue_data/src/model/venue_image_dto.dart';
+import 'package:venue_data/src/parser/category_parser.dart';
+import 'package:venue_data/src/parser/coordinates_parser.dart';
+import 'package:venue_data/src/parser/opening_hours_parser.dart';
+import 'package:venue_data/src/parser/thing_to_do_parser.dart';
+import 'package:venue_data/src/parser/venue_image_parser.dart';
 import 'package:venue_data/src/utility/safe.dart';
-import 'package:venue_data/venue_data.dart';
 
 abstract class VenueParser {
   VenueDto parse(dynamic json);
