@@ -1,39 +1,60 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+# 🧩 venue_domain
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+The `venue_domain` package represents the **domain layer** in a clean architecture setup. It defines the **business rules and interfaces** without knowing about implementation details.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+---
 
-## Features
+## 🔍 Purpose
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Contains only **abstract contracts**, **domain models**, and **use cases**.
+- Does not depend on any external packages or Flutter libraries — it's pure Dart.
+- Ensures that the **core logic** is independent, reusable, and easy to test.
 
-## Getting started
+---
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+## 🧱 Architecture Decisions
 
-## Usage
+### 1. **Repository Interface**
+The `VenueRepository` interface defines what operations are required (e.g., `getVenues()`, `getVenueById()`), allowing the data layer to implement it in various ways.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### 2. **Use Cases**
+We isolate logic into **use case classes**, like:
+- `GetAllVenues`
+- `GetVenueById`
 
-```dart
-const like = 'sample';
-```
+These encapsulate business rules and are the entry points for the UI or application layer.
 
-## Additional information
+### 3. **Interfaces for Use Cases**
+Each use case is written to an interface (e.g., `GetAllVenues`) and implemented separately (`GetAllVenuesImpl`) to promote loose coupling and testability.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+---
+
+## 📁 Structure
+
+| Folder         | Purpose                          |
+|----------------|----------------------------------|
+| `repositories` | Abstract contracts for data ops  |
+| `usecases`     | Reusable business logic units    |
+
+---
+
+## 🧪 Testability
+
+- All components are easily mockable and testable.
+- Does not require Flutter to run tests — pure Dart testing.
+
+---
+
+## 🔗 Depends On
+
+- `venue_entity` only — no direct dependency on UI or data.
+
+---
+
+## 🔐 Why This Matters
+
+By keeping business logic in a clean domain layer:
+- You future-proof the codebase
+- Enable easy replacement of data sources
+- Achieve high test coverage with low maintenance
