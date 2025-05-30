@@ -1,1 +1,1 @@
-export 'presentation/screen.dart';
+export 'src/presentation/screen.dart';
