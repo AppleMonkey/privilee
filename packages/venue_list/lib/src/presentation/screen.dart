@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:venue_list/src/bloc/venue_list_bloc.dart';
 import 'package:venue_list/src/bloc/venue_list_state.dart';
+import 'package:venue_list/src/presentation/widgets/venue_grid.dart';
 
 class Screen extends StatelessWidget {
   const Screen({super.key});
@@ -15,15 +16,8 @@ class Screen extends StatelessWidget {
           if (state is LoadingState) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is LoadedState) {
-            final venues = state.venues;
-            return ListView.builder(
-              itemCount: venues.length,
-              itemBuilder:
-                  (_, index) => ListTile(
-                    title: Text(venues[index].name),
-                    subtitle: Text(venues[index].city),
-                  ),
-            );
+            final displayModel = state.venueGrid;
+            return VenueGrid(venueGridDisplayModel: displayModel);
           } else if (state is ErrorState) {
             return Center(child: Text('Error: ${state.message}'));
           } else {
