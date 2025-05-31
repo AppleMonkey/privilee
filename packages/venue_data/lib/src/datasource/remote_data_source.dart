@@ -22,7 +22,9 @@ class VenueRemoteDataSourceImpl implements VenueRemoteDataSource {
 
     // In a real implementation, you would use _client.get() to fetch data from an API
     // await _client.get(Uri.parse('https://api.example.com/venues'));
-    final raw = await rootBundle.loadString('assets/gyms.json');
+    final raw = await rootBundle.loadString(
+      'packages/venue_data/assets/gyms.json',
+    );
 
     final decoded = jsonDecode(raw);
 
