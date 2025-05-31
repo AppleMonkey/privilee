@@ -1,0 +1,23 @@
+name: privilee
+
+packages:
+  - packages/venue_data
+  - packages/venue_domain
+  - packages/venue_list
+
+scripts:
+  build:
+    description: Run build_runner in venue_data package
+    run: dart run build_runner build --delete-conflicting-outputs
+    exec:
+      concurrency: 1
+    select-package:
+      name: venue_data
+
+  clean:
+    description: Clean all packages (flutter clean)
+    run: flutter clean
+
+  build_runner:clean:
+    run: |
+      melos exec -- dart run build_runner clean
