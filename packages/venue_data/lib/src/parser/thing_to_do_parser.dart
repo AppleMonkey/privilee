@@ -1,13 +1,13 @@
-import 'package:injectable/injectable.dart' show injectable;
+import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/thing_to_do_dto.dart';
 
+@immutable
 abstract class ThingToDoParser {
   ThingToDoDto parse(dynamic json);
 }
 
-@immutable
-@injectable
+@LazySingleton(as: ThingToDoParser)
 class ThingToDoParserImplementation implements ThingToDoParser {
   @override
   ThingToDoDto parse(dynamic json) {

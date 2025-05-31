@@ -1,14 +1,14 @@
-import 'package:injectable/injectable.dart' show injectable;
+import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/coordinates_dto.dart';
 import 'package:venue_entity/venue_entity.dart' show Coordinates;
 
+@immutable
 abstract class CoordinatesMapper {
   Coordinates map({required CoordinatesDto coordinates});
 }
 
-@immutable
-@injectable
+@LazySingleton(as: CoordinatesMapper)
 class CoordinatesMapperImplementation implements CoordinatesMapper {
   @override
   Coordinates map({required CoordinatesDto coordinates}) {

@@ -1,14 +1,14 @@
-import 'package:injectable/injectable.dart' show injectable;
+import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/category_dto.dart';
 import 'package:venue_data/src/utility/safe.dart';
 
+@immutable
 abstract class CategoryParser {
   CategoryDto? parse(dynamic json);
 }
 
-@immutable
-@injectable
+@LazySingleton(as: CategoryParser)
 class CategoryParserImplementation implements CategoryParser {
   @override
   CategoryDto? parse(dynamic json) {

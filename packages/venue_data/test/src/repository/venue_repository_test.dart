@@ -29,7 +29,7 @@ void main() {
     WidgetsFlutterBinding.ensureInitialized();
     
     client = Client();
-    venueRemoteDataSource = VenueRemoteDataSourceImpl(client: client);
+    venueRemoteDataSource = VenueRemoteDataSourceImpl();
     venueParser = VenueParserImplementation(
       coordinatesParser: CoordinatesParserImplementation(),
       venueImageParser: VenueImageParserImplementation(),

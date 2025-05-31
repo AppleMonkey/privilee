@@ -1,24 +1,28 @@
 name: privilee
 description: "A new Flutter project."
-
-publish_to: "none"
 version: 1.0.0+1
+publish_to: "none"
 
 environment:
   sdk: ^3.7.2
+  flutter: ">=3.10.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.0 # BLoC state management
+  flutter_bloc: ^9.1.1
+  venue_domain:
+    path: packages/venue_domain
+  venue_data:
+    path: packages/venue_data
   venue_list:
     path: packages/venue_list
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^5.0.0
+  melos: ^3.1.0
 
 flutter:
   uses-material-design: true

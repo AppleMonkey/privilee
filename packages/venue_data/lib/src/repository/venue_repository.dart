@@ -1,4 +1,4 @@
-import 'package:injectable/injectable.dart' show injectable;
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/datasource/remote_data_source.dart';
 import 'package:venue_data/src/mapper/venue_mapper.dart';
@@ -9,7 +9,7 @@ import 'package:venue_entity/venue_entity.dart';
 import 'package:collection/collection.dart';
 
 @immutable
-@injectable
+@LazySingleton(as: VenueRepository)
 class VenueRepositoryImplementation implements VenueRepository {
   final VenueRemoteDataSource _remoteDataSource;
   final VenueParser _parser;

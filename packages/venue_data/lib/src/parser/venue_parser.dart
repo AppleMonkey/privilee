@@ -1,4 +1,4 @@
-import 'package:injectable/injectable.dart' show injectable;
+import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/category_dto.dart';
 import 'package:venue_data/src/model/thing_to_do_dto.dart';
@@ -11,12 +11,12 @@ import 'package:venue_data/src/parser/thing_to_do_parser.dart';
 import 'package:venue_data/src/parser/venue_image_parser.dart';
 import 'package:venue_data/src/utility/safe.dart';
 
+@immutable
 abstract class VenueParser {
   VenueDto parse(dynamic json);
 }
 
-@immutable
-@injectable
+@LazySingleton(as: VenueParser)
 class VenueParserImplementation implements VenueParser {
   final CoordinatesParser _coordinatesParser;
   final VenueImageParser _venueImageParser;

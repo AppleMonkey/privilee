@@ -1,4 +1,4 @@
-import 'package:injectable/injectable.dart' show injectable;
+import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/mapper/category_mapper.dart';
 import 'package:venue_data/src/mapper/coordinates_mapper.dart';
@@ -9,12 +9,12 @@ import 'package:venue_data/src/model/venue_dto.dart';
 import 'package:venue_entity/venue_entity.dart' show Venue;
 
 
+@immutable
 abstract class VenueMapper {
   Venue map({required VenueDto venue});
 }
 
-@immutable
-@injectable
+@LazySingleton(as: VenueMapper)
 class VenueMapperImplementation implements VenueMapper {
   final CoordinatesMapper _coordinatesMapper;
   final VenueImageMapper _venueImageMapper;

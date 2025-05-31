@@ -1,10 +1,14 @@
+import 'package:injectable/injectable.dart' show LazySingleton;
+import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/opening_hours_dto.dart';
 import 'package:venue_data/src/utility/safe.dart';
 
+@immutable
 abstract class OpeningHoursParser {
   Map<String, OpeningHoursDto> parse(dynamic json);
 }
 
+@LazySingleton(as: OpeningHoursParser)
 class OpeningHoursParserImplementation implements OpeningHoursParser {
   @override
   Map<String, OpeningHoursDto> parse(dynamic json) {

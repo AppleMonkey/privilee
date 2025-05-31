@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: venue_domain
+dependency_overrides:
+  venue_domain:
+    path: ../venue_domain

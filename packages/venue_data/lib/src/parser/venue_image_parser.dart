@@ -1,14 +1,14 @@
-import 'package:injectable/injectable.dart' show injectable;
+import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/venue_image_dto.dart' show VenueImageDto;
 import 'package:venue_data/src/utility/safe.dart' show safeCast;
 
+@immutable
 abstract class VenueImageParser {
   VenueImageDto? parse(dynamic json);
 }
 
-@immutable
-@injectable
+@LazySingleton(as: VenueImageParser)
 class VenueImageParserImplementation implements VenueImageParser {
   @override
   VenueImageDto? parse(dynamic json) {

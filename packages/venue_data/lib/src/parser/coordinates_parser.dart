@@ -1,13 +1,13 @@
-import 'package:injectable/injectable.dart' show injectable;
+import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/coordinates_dto.dart';
 
+@immutable
 abstract class CoordinatesParser {
   CoordinatesDto? parse(dynamic json);
 }
 
-@immutable
-@injectable
+@LazySingleton(as: CoordinatesParser)
 class CoordinatesParserImplementation implements CoordinatesParser {
   @override
   CoordinatesDto? parse(dynamic json) {

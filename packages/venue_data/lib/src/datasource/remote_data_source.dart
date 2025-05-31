@@ -1,19 +1,17 @@
 import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:http/http.dart';
-import 'package:injectable/injectable.dart' show injectable;
-import 'package:meta/meta.dart' show immutable;
 
+import 'package:flutter/services.dart';
+import 'package:injectable/injectable.dart';
+import 'package:meta/meta.dart';
+
+@immutable
 abstract class VenueRemoteDataSource {
   Future<List<dynamic>> fetchVenues();
 }
 
-@immutable
-@injectable
+@LazySingleton(as: VenueRemoteDataSource)
 class VenueRemoteDataSourceImpl implements VenueRemoteDataSource {
-  final Client _client;
-
-  const VenueRemoteDataSourceImpl({required Client client}) : _client = client;
+  const VenueRemoteDataSourceImpl();
 
   @override
   Future<List<dynamic>> fetchVenues() async {

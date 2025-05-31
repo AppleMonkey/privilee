@@ -1,9 +1,10 @@
-import 'package:injectable/injectable.dart' show injectable;
+import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/opening_hours_dto.dart'
     show OpeningHoursDto;
 import 'package:venue_entity/venue_entity.dart' show OpeningHours;
 
+@immutable
 abstract class OpeningHoursMapper {
   OpeningHours mapEntry({required OpeningHoursDto openingHours});
   Map<String, OpeningHours> map({
@@ -11,8 +12,7 @@ abstract class OpeningHoursMapper {
   });
 }
 
-@immutable
-@injectable
+@LazySingleton(as: OpeningHoursMapper)
 class OpeningHoursMapperImplementation implements OpeningHoursMapper {
   @override
   OpeningHours mapEntry({required OpeningHoursDto openingHours}) {
