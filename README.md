@@ -33,7 +33,7 @@ The app follows a **3-layer Clean Architecture**:
 * Compile-time enforced boundaries.
 
 ```plaintext
-privilee_venue_listing_app/
+privilee/
 ├─ packages/
 │  ├─ venue_domain/
 │  ├─ venue_data/
