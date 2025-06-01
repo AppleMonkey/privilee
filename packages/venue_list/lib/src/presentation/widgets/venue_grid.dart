@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:venue_list/src/display_model/venue_grid_display_model.dart';
+import 'package:venue_list/src/presentation/widgets/venue_card.dart';
 
 class VenueGrid extends StatelessWidget {
   final VenueGridDisplayModel venueGridDisplayModel;
@@ -17,14 +18,11 @@ class VenueGrid extends StatelessWidget {
             maxCrossAxisExtent: 280,
             mainAxisSpacing: 16,
             crossAxisSpacing: 16,
-            childAspectRatio: 3 / 2,
+            childAspectRatio: 3 / 3.5,
           ),
           itemBuilder: (_, index) {
             final venue = venueGridDisplayModel.items[index];
-            return ListTile(
-              title: Text(venue.name),
-              subtitle: Text(venue.location),
-            );
+            return VenueCard(model: venue);
           },
         );
       },

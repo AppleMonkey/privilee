@@ -1,0 +1,105 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "privilee",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "privilee (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "privilee (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "venue_data",
+      "cwd": "packages/venue_data",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "venue_data (profile mode)",
+      "cwd": "packages/venue_data",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "venue_data (release mode)",
+      "cwd": "packages/venue_data",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "venue_domain",
+      "cwd": "packages/venue_domain",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "venue_domain (profile mode)",
+      "cwd": "packages/venue_domain",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "venue_domain (release mode)",
+      "cwd": "packages/venue_domain",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "venue_entity",
+      "cwd": "packages/venue_entity",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "venue_entity (profile mode)",
+      "cwd": "packages/venue_entity",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "venue_entity (release mode)",
+      "cwd": "packages/venue_entity",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "venue_list",
+      "cwd": "packages/venue_list",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "venue_list (profile mode)",
+      "cwd": "packages/venue_list",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "venue_list (release mode)",
+      "cwd": "packages/venue_list",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}
