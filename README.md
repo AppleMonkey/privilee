@@ -77,6 +77,7 @@ Venue parsing is tested with parameterized tests, which isolate the test logic f
 | `mocktail`     | Unit testing mocks               |
 | `bloc_test`    | Testing BLoC states              |
 | `melos`        | Monorepo orchestration           |
+| `cached_network_image`        | cache images      |
 
 ---
 
