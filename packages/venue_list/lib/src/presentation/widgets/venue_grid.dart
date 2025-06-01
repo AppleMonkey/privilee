@@ -8,24 +8,18 @@ class VenueGrid extends StatelessWidget {
   const VenueGrid({super.key, required this.venueGridDisplayModel});
 
   @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (_, constraints) {
-        return GridView.builder(
-          padding: const EdgeInsets.all(16),
-          itemCount: venueGridDisplayModel.items.length,
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 280,
-            mainAxisSpacing: 16,
-            crossAxisSpacing: 16,
-            childAspectRatio: 3 / 3.5,
-          ),
-          itemBuilder: (_, index) {
-            final venue = venueGridDisplayModel.items[index];
-            return VenueCard(model: venue);
-          },
-        );
-      },
-    );
-  }
+  Widget build(BuildContext context) => GridView.builder(
+    padding: const EdgeInsets.all(16),
+    itemCount: venueGridDisplayModel.items.length,
+    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      maxCrossAxisExtent: 280,
+      mainAxisSpacing: 16,
+      crossAxisSpacing: 16,
+      childAspectRatio: 3 / 3.7,
+    ),
+    itemBuilder: (_, index) {
+      final venue = venueGridDisplayModel.items[index];
+      return VenueCard(model: venue);
+    },
+  );
 }
