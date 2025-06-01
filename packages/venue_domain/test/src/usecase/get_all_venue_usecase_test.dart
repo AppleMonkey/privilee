@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:venue_domain/venue_domain.dart';
-import 'package:venue_entity/venue_entity.dart';
 
 class MockVenueRepository extends Mock implements VenueRepository {}
 
@@ -29,7 +28,7 @@ void main() {
         categories: [],
         openingHours: {},
         thingsToDo: [],
-      )
+      ),
     ];
 
     when(() => repository.getVenues()).thenAnswer((_) async => venues);

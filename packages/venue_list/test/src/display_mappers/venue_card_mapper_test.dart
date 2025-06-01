@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:venue_entity/venue_entity.dart';
+import 'package:venue_domain/venue_domain.dart';
 import 'package:venue_list/src/display_mapper/venue_card_mapper.dart';
 
 void main() {

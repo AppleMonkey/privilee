@@ -462,13 +462,6 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
-  venue_entity:
-    dependency: transitive
-    description:
-      path: "packages/venue_entity"
-      relative: true
-    source: path
-    version: "1.0.0"
   venue_list:
     dependency: "direct main"
     description:

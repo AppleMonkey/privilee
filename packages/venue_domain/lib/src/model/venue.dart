@@ -3,7 +3,9 @@ import 'coordinates.dart';
 import 'thing_to_do.dart';
 import 'venue_image.dart';
 import 'opening_hours.dart';
+import 'package:meta/meta.dart' show immutable;
 
+@immutable
 class Venue {
   final String id;
   final String name;
@@ -18,7 +20,7 @@ class Venue {
   final List<String> overviewText;
   final List<ThingToDo> thingsToDo;
 
-  Venue({
+  const Venue({
     required this.id,
     required this.name,
     required this.city,

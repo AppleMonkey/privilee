@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart' show immutable;
-import 'package:venue_entity/venue_entity.dart';
+import 'package:venue_domain/src/model/venue.dart';
 
 @immutable
 abstract class VenueRepository {

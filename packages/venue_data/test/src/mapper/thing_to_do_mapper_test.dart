@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:venue_data/src/mapper/thing_to_do_mapper.dart';
 import 'package:venue_data/src/model/thing_to_do_dto.dart';
-import 'package:venue_entity/venue_entity.dart' show ThingToDo;
+import 'package:venue_domain/venue_domain.dart' show ThingToDo;
 
 void main() {
   final thingToDoMapper = ThingToDoMapperImplementation();

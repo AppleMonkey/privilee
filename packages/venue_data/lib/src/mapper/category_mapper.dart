@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/category_dto.dart' show CategoryDto;
-import 'package:venue_entity/venue_entity.dart' show Category;
+import 'package:venue_domain/venue_domain.dart' show Category;
 
 @immutable
 abstract class CategoryMapper {

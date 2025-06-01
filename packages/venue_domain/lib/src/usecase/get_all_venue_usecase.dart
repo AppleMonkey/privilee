@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
+import 'package:venue_domain/src/model/venue.dart';
 import 'package:venue_domain/src/repository/venue_repository.dart';
-import 'package:venue_entity/venue_entity.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart' show immutable;
 

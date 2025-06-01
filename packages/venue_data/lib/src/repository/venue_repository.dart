@@ -4,8 +4,7 @@ import 'package:venue_data/src/datasource/remote_data_source.dart';
 import 'package:venue_data/src/mapper/venue_mapper.dart';
 import 'package:venue_data/src/parser/venue_parser.dart';
 import 'package:venue_data/src/utility/safe.dart';
-import 'package:venue_domain/venue_domain.dart' show VenueRepository;
-import 'package:venue_entity/venue_entity.dart';
+import 'package:venue_domain/venue_domain.dart' show Venue, VenueRepository;
 import 'package:collection/collection.dart';
 
 @immutable

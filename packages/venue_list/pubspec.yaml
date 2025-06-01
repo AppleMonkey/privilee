@@ -16,9 +16,6 @@ dependencies:
   meta: ^1.16.0
   venue_domain:
     path: ../venue_domain
-  venue_entity:
-    path: ../venue_entity
-  # smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:venue_domain/venue_domain.dart';
 import 'package:venue_list/src/usecase/get_venue_grid_model_usecase.dart';
 
 import 'venue_list_event.dart';

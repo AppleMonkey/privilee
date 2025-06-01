@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:venue_data/src/mapper/category_mapper.dart';
 import 'package:venue_data/src/model/category_dto.dart';
-import 'package:venue_entity/venue_entity.dart' show Category;
+import 'package:venue_domain/venue_domain.dart' show Category;
 
 void main() {
   final categoryMapper = CategoryMapperImplementation();

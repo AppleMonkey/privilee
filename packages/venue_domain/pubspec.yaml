@@ -8,13 +8,12 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  equatable: ^2.0.7
   flutter:
     sdk: flutter
   get_it: ^8.0.3
   injectable: ^2.5.0
   meta: ^1.16.0
-  venue_entity:
-    path: ../venue_entity
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:venue_data/src/mapper/opening_hours_mapper.dart';
 import 'package:venue_data/src/model/opening_hours_dto.dart';
-import 'package:venue_entity/venue_entity.dart' show OpeningHours;
+import 'package:venue_domain/venue_domain.dart' show OpeningHours;
 
 import '../parametarized_test_utility/parametarized_test.dart';
 

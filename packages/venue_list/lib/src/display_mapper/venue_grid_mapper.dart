@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart' show Injectable;
-import 'package:venue_entity/venue_entity.dart' show Venue;
+import 'package:venue_domain/venue_domain.dart' show Venue;
 import 'package:venue_list/src/display_mapper/venue_card_mapper.dart';
 import 'package:venue_list/src/display_model/venue_grid_display_model.dart';
 

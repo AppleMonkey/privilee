@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:venue_domain/venue_domain.dart';
-import 'package:venue_entity/venue_entity.dart';
 import 'package:venue_list/src/display_model/venue_display_model.dart';
 import 'package:venue_list/src/display_model/venue_grid_display_model.dart';
 import 'package:venue_list/src/display_mapper/venue_grid_mapper.dart';

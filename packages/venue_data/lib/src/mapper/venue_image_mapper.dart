@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/venue_image_dto.dart';
-import 'package:venue_entity/venue_entity.dart' show VenueImage;
+import 'package:venue_domain/venue_domain.dart' show VenueImage;
 
 @immutable
 abstract class VenueImageMapper {

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:venue_data/src/mapper/venue_image_mapper.dart';
 import 'package:venue_data/src/model/venue_image_dto.dart';
-import 'package:venue_entity/venue_entity.dart' show VenueImage;
+import 'package:venue_domain/venue_domain.dart' show VenueImage;
 
 void main() {
   final venueImaveMapper = VenueImageMapperImplementation();

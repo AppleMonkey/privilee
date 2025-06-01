@@ -2,7 +2,7 @@ import 'package:injectable/injectable.dart' show LazySingleton;
 import 'package:meta/meta.dart' show immutable;
 import 'package:venue_data/src/model/opening_hours_dto.dart'
     show OpeningHoursDto;
-import 'package:venue_entity/venue_entity.dart' show OpeningHours;
+import 'package:venue_domain/venue_domain.dart' show OpeningHours;
 
 @immutable
 abstract class OpeningHoursMapper {

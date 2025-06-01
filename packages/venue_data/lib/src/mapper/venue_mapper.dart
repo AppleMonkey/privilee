@@ -6,7 +6,7 @@ import 'package:venue_data/src/mapper/opening_hours_mapper.dart';
 import 'package:venue_data/src/mapper/thing_to_do_mapper.dart';
 import 'package:venue_data/src/mapper/venue_image_mapper.dart';
 import 'package:venue_data/src/model/venue_dto.dart';
-import 'package:venue_entity/venue_entity.dart' show Venue;
+import 'package:venue_domain/venue_domain.dart' show Venue;
 
 
 @immutable

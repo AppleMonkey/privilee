@@ -1,5 +1,5 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:venue_entity/venue_entity.dart';
+import 'package:venue_domain/venue_domain.dart';
 
 class VenueFake extends Fake implements Venue {
   @override
