@@ -1,84 +1,137 @@
-# Privilee Venues App - Monorepo Readme
+# Privilee Venue Listing App
 
-## 🧠 Architecture Overview
+This project showcases a venue listing feature within the **Privilee** ecosystem, built using a **Clean Architecture** approach with modular Flutter packages managed via **Melos**.
 
-This project is built using **Clean Architecture** principles, organized in a **Flutter Melos monorepo** setup. The goal is to separate concerns clearly between layers and maintain scalability.
+---
 
-### 🧱 Project Structure
+## 🧱 Architecture Overview
 
+The app follows a **3-layer Clean Architecture**:
+
+### 1. `venue_domain`
+
+* Contains core business logic and domain models.
+* Defines repository interfaces and use cases.
+* Clean, platform-agnostic, and highly testable.
+
+### 2. `venue_data`
+
+* Implements domain interfaces and handles remote data access.
+* Uses defensive parsing to safely handle malformed or missing data.
+* Converts raw JSON into domain models.
+
+### 3. `venue_app`
+
+* UI layer using `flutter_bloc` for state management.
+* Injects domain use cases only—no direct access to data layer.
+* Uses display models and mappers to isolate UI logic.
+
+**Advantages**:
+
+* Strong separation of concerns.
+* High testability and maintainability.
+* Compile-time enforced boundaries.
+
+```plaintext
+privilee_venue_listing_app/
+├─ packages/
+│  ├─ venue_domain/
+│  ├─ venue_data/
+│  └─ venue_app/
 ```
-packages/
-├── venue_entity     # Pure Dart models shared across layers (Domain Models)
-├── venue_domain     # Contains abstract repositories & use cases
-├── venue_data       # Implements data sources and repositories
-├── venue_list       # Presentation layer (UI + BLoC + Mappers)
-```
 
-### 🔄 Flow
+---
 
-* **Entity Layer:** Defines domain entities shared across layers.
-* **Domain Layer:** Declares abstract repositories and use cases.
-* **Data Layer:** Implements the domain contracts using remote data (mocked JSON for now).
-* **Presentation Layer:** Uses BLoC and mappers to present venue data in the UI.
+## 📦 Monorepo with Melos
 
-### ✅ Injection
+Each layer is an isolated package managed with **Melos**, which simplifies development across modules, enforces modular design, and enables parallel development and testing.
 
-Dependency injection is managed via:
+---
 
-* [`injectable`](https://pub.dev/packages/injectable)
-* [`get_it`](https://pub.dev/packages/get_it)
+## 🧩 Abstraction & DI
 
-Build runner is used to auto-generate injection configs.
+Dependency injection is powered by `injectable` and `get_it`. Code generation (`build_runner`) creates registration logic across packages, ensuring loose coupling and clean dependencies.
 
-## 🚀 How to Run the Project
+---
 
-### 1. Install Melos if you haven’t:
+## 🛡️ Defensive Parsing
+
+All DTOs and parsers implement defensive logic to catch malformed or missing fields. Errors bubble up through layers, allowing for contextual handling and fallback strategies.
+
+---
+
+## 🧪 Parameterized Testing
+
+Venue parsing is tested with parameterized tests, which isolate the test logic from input scenarios—making the test cases easier to expand and reason about.
+
+---
+
+## 🛠️ Dev Tools and Packages
+
+| Package        | Purpose                          |
+| -------------- | -------------------------------- |
+| `get_it`       | Service locator for DI           |
+| `injectable`   | Declarative dependency injection |
+| `build_runner` | Code generation                  |
+| `flutter_bloc` | BLoC pattern                     |
+| `mocktail`     | Unit testing mocks               |
+| `bloc_test`    | Testing BLoC states              |
+| `melos`        | Monorepo orchestration           |
+
+---
+
+## 📌 Summary
+
+* 3-layer architecture.
+* Modular packages for isolation and testing.
+* Dependency injection via `injectable` & `get_it`.
+* Defensive parsing and parameterized tests for robustness.
+
+---
+
+## 🤝 How to Contribute
+
+### Dev Setup
 
 ```bash
-flutter pub global activate melos
-```
-
-### 2. Bootstrap the workspace:
-
-```bash
+flutter pub get
 melos bootstrap
 ```
 
-### 3. Clean all packages (optional but recommended before build):
+### Build Codegen
 
 ```bash
-melos run clean
+melos run clean     # Clean generated files
+melos run build     # Generate DI and mappers
 ```
 
-### 4. Generate DI and other build\_runner code:
-
-```bash
-melos run build
-```
-
-### 5. Run the app:
+### Run the App
 
 ```bash
 flutter run -t lib/main.dart
 ```
 
-### 6. Tests:
+---
+
+## 📦 Melos Commands Available
 
 ```bash
-melos run test
+melos run clean
+melos run build
 ```
 
-## 📦 Notable Packages Used
+---
 
-| Package                 | Why We Use It                                  |
-| ----------------------- | ---------------------------------------------- |
-| `get_it`                | Service locator for injection                  |
-| `injectable`            | Code-gen for DI with `get_it`                  |
-| `bloc` / `flutter_bloc` | State management in presentation               |
-| `mocktail`              | Mocking in unit tests                          |
-| `build_runner`          | Code-gen tooling                               |
+## 🔮 Future Enhancements
 
-## 📸 UI Inspiration
+* Implement pagination and lazy loading.
+* Add sorting/filtering UI.
+* Support for localization in display models.
 
-The venue list UI uses a **responsive grid** layout with an adaptive number of columns based on screen width. Each item supports a **carousel image viewer** with a **dot indicator** and a placeholder image when no images are available.
+---
 
+## 🧠 Final Thoughts
+
+This project emphasizes scalability, testability, and clean separation of concerns. By adhering to Clean Architecture and modular design, each layer is independently testable and replaceable. This structure enables teams to iterate faster, onboard easily, and maintain high code quality over time.
+
+If you're reviewing this project, I hope it's clear that the decisions taken, architectural structure, modularization, dependency injection, and test strategy—weren’t accidental. They reflect real-world development principles aimed at building scalable and maintainable apps. The focus was on clarity, structure, and clean boundaries to make this codebase production-ready and team-friendly.
